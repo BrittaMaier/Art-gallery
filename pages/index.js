@@ -5,6 +5,7 @@ const URL = "https://example-apis.vercel.app/api/art";
 export default function HomePage() {
   const { data, error, isLoading } = useSWR(URL);
   console.log("Data", data);
+
   if (!data) {
     return <h1>Loading...</h1>;
   }
@@ -14,7 +15,25 @@ export default function HomePage() {
 
   return (
     <>
-      <main>Here will be the card component.</main>
+      <header>
+        <title>Art Gallery</title>
+      </header>
+      <main>
+        <h1>Art Gallery</h1>
+        <ul>
+          <li>
+            <img />
+            <h2>Art Title</h2>
+            <p>Artist Name</p>
+          </li>
+        </ul>
+
+        <nav>
+          <a>Spotlight</a>
+          <a>Art Pieces</a>
+          <a>Favorites</a>
+        </nav>
+      </main>
     </>
   );
 }
