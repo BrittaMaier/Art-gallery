@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 export default function ArtPiece({ image }) {
+  console.log("Image in ArtPiece:", image);
   return (
     <>
       <Image
