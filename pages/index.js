@@ -1,5 +1,6 @@
 import useSWR from "swr";
-import ArtPiece from "./Components/ArtPiece";
+//import ArtPiece from "./Components/ArtPiece";
+import Image from "next/image";
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -22,7 +23,15 @@ export default function HomePage() {
         <ul>
           {data?.map((image) => (
             <li key={image.slug}>
-              <ArtPiece image={image} />
+              {/*<ArtPiece image={image} />*/}
+              <Image
+                src={image?.imageSource}
+                alt={image.name}
+                width={140}
+                height={140}
+              />
+              <h2>{image.name}</h2>
+              <p>{image.artist}</p>
             </li>
           ))}
         </ul>
