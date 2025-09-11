@@ -5,12 +5,11 @@ const URL = "https://example-apis.vercel.app/api/art";
 
 export default function HomePage() {
   const { data, error, isLoading } = useSWR(URL);
-  console.log("Data", data);
 
   if (!data) {
     return <h1>Loading...</h1>;
   }
-
+  console.log("Data", data);
   if (error) return <div>Failed to load</div>;
   if (isLoading) return <div>loading...</div>;
   return (
