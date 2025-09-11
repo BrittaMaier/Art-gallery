@@ -5,7 +5,7 @@ export default function ArtPiece({ image }) {
   return (
     <>
       <Image
-        src={image.imageSource}
+        src={image?.imageSource}
         alt={image.name}
         width={140}
         height={140}
