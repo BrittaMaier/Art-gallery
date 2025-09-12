@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 
 export default function Navigation() {
@@ -15,7 +14,7 @@ const StyledNavigation = styled.nav`
   background-color: #eae6e6;
   display: flex;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   width: 100%;
   bottom: 0;
 `;
