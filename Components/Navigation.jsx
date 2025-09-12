@@ -24,4 +24,7 @@ const StyledLink = styled.a`
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
+  border-right: 1px solid #d1d1d1;
+  font-size: 1.125rem;
+  color: #000;
 `;

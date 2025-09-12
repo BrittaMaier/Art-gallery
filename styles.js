@@ -10,5 +10,10 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;

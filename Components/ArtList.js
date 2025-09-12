@@ -1,3 +1,3 @@
-export default function ArtList() {
-  return <div>Hello</div>;
+export default function ArtList({ children }) {
+  return <div>{children}</div>;
 }

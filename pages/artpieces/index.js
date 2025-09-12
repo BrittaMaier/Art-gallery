@@ -1,6 +1,7 @@
 import ArtPiece from "@/Components/ArtPiece.js";
 import Navigation from "@/Components/Navigation";
 import ArtList from "@/Components/ArtList";
+import styled from "styled-components";
 
 export default function artpieces({ data, bookmark, onToggleBookmark }) {
   return (
@@ -10,7 +11,7 @@ export default function artpieces({ data, bookmark, onToggleBookmark }) {
       </header>
       <main>
         <h1>Art Gallery</h1>
-        <ul>
+        <ArtList>
           {data.map((image) => (
             <ArtPiece
               key={image.slug}
@@ -18,13 +19,19 @@ export default function artpieces({ data, bookmark, onToggleBookmark }) {
               bookmark={bookmark}
               onToggleBookmark={onToggleBookmark}
             >
-              &quot;{image.name}&quot; by {image.artist}
+              <ArtTitle>&quot;{image.name}&quot;</ArtTitle>
+              by {image.artist}
             </ArtPiece>
           ))}
-        </ul>
+        </ArtList>
 
         <Navigation />
       </main>
     </>
   );
 }
+
+const ArtTitle = styled.h3`
+  margin: 0 0 10px;
+  font-style: italic;
+`;
