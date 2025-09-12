@@ -2,7 +2,7 @@ import ArtPiece from "@/Components/ArtPiece.js";
 import Navigation from "@/Components/Navigation";
 //import ArtList from "@/Components/ArtList";
 
-export default function spotlight({ data }) {
+export default function spotlight({ data, bookmark, onToggleBookmark }) {
   function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
   }
@@ -15,7 +15,13 @@ export default function spotlight({ data }) {
       </header>
       <main>
         <h1>Art Gallery</h1>
-        <ArtPiece image={randomArt}>{randomArt.artist}</ArtPiece>
+        <ArtPiece
+          image={randomArt}
+          bookmark={bookmark}
+          onToggleBookmark={onToggleBookmark}
+        >
+          {randomArt.artist}
+        </ArtPiece>
 
         <Navigation />
       </main>
