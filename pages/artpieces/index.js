@@ -1,5 +1,5 @@
 import ArtPiece from "@/Components/ArtPiece.js";
-import Link from "next/link";
+import Navigation from "@/Components/Navigation";
 //import ArtList from "@/Components/ArtList";
 
 export default function artpieces({ data }) {
@@ -20,11 +20,7 @@ export default function artpieces({ data }) {
           ))}
         </ul>
 
-        <nav>
-          <Link href={"/"}>Spotlight</Link>
-          <Link href={"/artpieces"}>Art Pieces</Link>
-          <Link href={""}>Favorites</Link>
-        </nav>
+        <Navigation />
       </main>
     </>
   );
