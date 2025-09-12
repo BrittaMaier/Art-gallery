@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import Navigation from "@/Components/Navigation";
 
-export default function ArtDetail({ data }) {
+export default function ArtDetail({ data, bookmark, onToggleBookmark }) {
   //grab slug
   const router = useRouter();
   const { slug } = router.query;
@@ -12,6 +13,7 @@ export default function ArtDetail({ data }) {
   }
 
   const image = data.find((item) => item.slug === slug);
+  if (!image) return <p>Not found</p>;
   return (
     <>
       <Link href={`/artpieces`}>← back</Link>
@@ -26,6 +28,10 @@ export default function ArtDetail({ data }) {
       </h1>
       <p>{image.year}</p>
       <p>{image.genre}</p>
+      <button type="button" onClick={() => onToggleBookmark(image.slug)}>
+        {bookmark.includes(image.slug) ? "❤️" : "🤍"}
+      </button>
+      <Navigation />
     </>
   );
 }
