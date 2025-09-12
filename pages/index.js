@@ -1,18 +1,7 @@
-import useSWR from "swr";
 import ArtPiece from "@/Components/ArtPiece.js";
 //import ArtList from "@/Components/ArtList";
 
-const URL = "https://example-apis.vercel.app/api/art";
-
-export default function HomePage() {
-  const { data, error, isLoading } = useSWR(URL);
-
-  if (!data) {
-    return <h1>Loading...</h1>;
-  }
-  console.log("Data", data);
-  if (error) return <div>Failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+export default function HomePage({ data }) {
   return (
     <>
       <header>
