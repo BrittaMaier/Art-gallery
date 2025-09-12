@@ -1,21 +1,20 @@
 import ArtPiece from "@/Components/ArtPiece.js";
 //import ArtList from "@/Components/ArtList";
 
-export default function HomePage({ data }) {
+export default function spotlight({ data }) {
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+  const randomArt = getRandomElement(data);
+
   return (
     <>
       <header>
-        <title>Art Gallery</title>
+        <title>Spotlight</title>
       </header>
       <main>
         <h1>Art Gallery</h1>
-        <ul>
-          {data.map((image) => (
-            <li key={image.slug}>
-              <ArtPiece image={image} />
-            </li>
-          ))}
-        </ul>
+        <ArtPiece image={randomArt}>{randomArt.artist}</ArtPiece>
 
         <nav>
           <a>Spotlight</a>

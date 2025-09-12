@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function ArtPiece({ image }) {
+export default function ArtPiece({ image, children }) {
   console.log("Image in ArtPiece:", image);
   return (
     <>
@@ -10,8 +10,7 @@ export default function ArtPiece({ image }) {
         width={140}
         height={140}
       />
-      <h2>{image.name}</h2>
-      <p>{image.artist}</p>
+      <p>{children}</p>
     </>
   );
 }
