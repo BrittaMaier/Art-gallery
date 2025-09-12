@@ -1,5 +1,6 @@
 import ArtPiece from "@/Components/ArtPiece.js";
 //import ArtList from "@/Components/ArtList";
+import Link from "next/link";
 
 export default function spotlight({ data }) {
   function getRandomElement(array) {
@@ -17,9 +18,9 @@ export default function spotlight({ data }) {
         <ArtPiece image={randomArt}>{randomArt.artist}</ArtPiece>
 
         <nav>
-          <a>Spotlight</a>
-          <a>Art Pieces</a>
-          <a>Favorites</a>
+          <Link href={"/"}>Spotlight</Link>
+          <Link href={"/artpieces"}>Art Pieces</Link>
+          <Link href={""}>Favorites</Link>
         </nav>
       </main>
     </>

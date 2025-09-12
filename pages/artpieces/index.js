@@ -1,4 +1,5 @@
 import ArtPiece from "@/Components/ArtPiece.js";
+import Link from "next/link";
 //import ArtList from "@/Components/ArtList";
 
 export default function artpieces({ data }) {
@@ -13,16 +14,16 @@ export default function artpieces({ data }) {
           {data.map((image) => (
             <li key={image.slug}>
               <ArtPiece image={image}>
-                "{image.name}" by {image.artist}
+                &quot;{image.name}&quot; by {image.artist}
               </ArtPiece>
             </li>
           ))}
         </ul>
 
         <nav>
-          <a>Spotlight</a>
-          <a>Art Pieces</a>
-          <a>Favorites</a>
+          <Link href={"/"}>Spotlight</Link>
+          <Link href={"/artpieces"}>Art Pieces</Link>
+          <Link href={""}>Favorites</Link>
         </nav>
       </main>
     </>
