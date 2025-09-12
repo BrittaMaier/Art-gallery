@@ -1,3 +1,3 @@
 export default function ArtList() {
-  return <ul></ul>;
+  return <div>Hello</div>;
 }
