@@ -21,7 +21,7 @@ export default function HomePage() {
       <main>
         <h1>Art Gallery</h1>
         <ArtList>
-          {data?.map((image) => (
+          {data.map((image) => (
             <li key={image.slug}>
               <ArtPiece image={image} />
               <h2>{image.name}</h2>
