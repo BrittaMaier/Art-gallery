@@ -1,37 +1,26 @@
-import useSWR from "swr";
 import ArtPiece from "@/Components/ArtPiece.js";
 //import ArtList from "@/Components/ArtList";
+import Link from "next/link";
 
-const URL = "https://example-apis.vercel.app/api/art";
-
-export default function HomePage() {
-  const { data, error, isLoading } = useSWR(URL);
-
-  if (!data) {
-    return <h1>Loading...</h1>;
+export default function spotlight({ data }) {
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
   }
-  console.log("Data", data);
-  if (error) return <div>Failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+  const randomArt = getRandomElement(data);
+
   return (
     <>
       <header>
-        <title>Art Gallery</title>
+        <title>Spotlight</title>
       </header>
       <main>
         <h1>Art Gallery</h1>
-        <ul>
-          {data.map((image) => (
-            <li key={image.slug}>
-              <ArtPiece image={image} />
-            </li>
-          ))}
-        </ul>
+        <ArtPiece image={randomArt}>{randomArt.artist}</ArtPiece>
 
         <nav>
-          <a>Spotlight</a>
-          <a>Art Pieces</a>
-          <a>Favorites</a>
+          <Link href={"/"}>Spotlight</Link>
+          <Link href={"/artpieces"}>Art Pieces</Link>
+          <Link href={""}>Favorites</Link>
         </nav>
       </main>
     </>
