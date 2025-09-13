@@ -11,7 +11,8 @@ export default function Navigation() {
 }
 
 const StyledNavigation = styled.nav`
-  background-color: #eae6e6;
+  background-color: #fff;
+  box-shadow: 0px 0px 7px 0px #00000055;
   display: flex;
   justify-content: space-between;
   position: fixed;

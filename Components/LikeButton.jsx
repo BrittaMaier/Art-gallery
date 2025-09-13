@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   background-color: #fff;
   border: none;
   position: absolute;
-  top: -20px;
+  top: -10px;
   right: 25px;
   padding: 10px;
   font-size: 1.5rem;

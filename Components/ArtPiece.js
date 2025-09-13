@@ -48,10 +48,12 @@ const StyledDiv = styled.div`
 
 const StyledLink = styled.a`
   display: block;
+  text-align: center;
 `;
 
 const StyledImage = styled.img`
   width: 100%;
+  max-width: 550px;
   border: 15px solid ${({ $colors }) => $colors};
   box-shadow: 0px 4px 5px 0px #00000030;
 `;
