@@ -2,6 +2,7 @@ import ArtPiece from "@/Components/ArtPiece.js";
 import Navigation from "@/Components/Navigation";
 import ArtList from "@/Components/ArtList";
 import styled from "styled-components";
+import Topbar from "@/Components/Topbar";
 
 export default function artpieces({ data, bookmark, onToggleBookmark }) {
   return (
@@ -10,7 +11,7 @@ export default function artpieces({ data, bookmark, onToggleBookmark }) {
         <title>Artpieces</title>
       </header>
       <main>
-        <h1>Art Gallery</h1>
+        <Topbar>Art Gallery</Topbar>
         <ArtList>
           {data.map((image) => (
             <ArtPiece

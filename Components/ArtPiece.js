@@ -36,12 +36,13 @@ const StyledDiv = styled.div`
   list-style: none;
   //padding: 30px;
   margin: 30px 20px;
+  color: #000;
 
   position: relative;
   ${({ $isFavorite }) =>
     $isFavorite &&
     css`
-      //box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.2);
+      color: #ce920b;
     `};
 `;
 
@@ -52,11 +53,12 @@ const StyledLink = styled.a`
 const StyledImage = styled.img`
   width: 100%;
   border: 15px solid ${({ $colors }) => $colors};
+  box-shadow: 0px 4px 5px 0px #00000030;
 `;
 
 const StyledCardBody = styled.div`
   padding: 15px 0 25px;
   background-color: #fff;
-  color: #000;
+
   text-align: center;
 `;
