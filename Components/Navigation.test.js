@@ -8,6 +8,7 @@ test("renders a navigation bar with a link to the spotlight page", () => {
     name: /spotlight/i,
   });
   expect(spotlightLink).toBeInTheDocument();
+  expect(spotlightLink).toHaveAttribute("href", "/");
 });
 test("renders a navigation bar with a link to the art pieces page", () => {
   render(<Navigation />);
@@ -15,6 +16,7 @@ test("renders a navigation bar with a link to the art pieces page", () => {
     name: /art pieces/i,
   });
   expect(artPiecesLink).toBeInTheDocument();
+  expect(artPiecesLink).toHaveAttribute("href", "/artpieces");
 });
 test("renders a navigation bar with a link to the favorites page", () => {
   render(<Navigation />);
@@ -23,4 +25,5 @@ test("renders a navigation bar with a link to the favorites page", () => {
   });
   //const favoritesLink = screen.toHaveAttribute("href", "/favorites");
   expect(favoritesLink).toBeInTheDocument();
+  expect(favoritesLink).toHaveAttribute("href", "/favorites");
 });
