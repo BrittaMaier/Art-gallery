@@ -5,7 +5,7 @@ export default function Navigation() {
     <StyledNavigation>
       <StyledLink href={"/"}>Spotlight</StyledLink>
       <StyledLink href={"/artpieces"}>Art Pieces</StyledLink>
-      <StyledLink href={""}>Favorites</StyledLink>
+      <StyledLink href={"/favorites"}>Favorites</StyledLink>
     </StyledNavigation>
   );
 }
