@@ -13,6 +13,9 @@ export default function Favorites({ data, bookmark, onToggleBookmark }) {
       <main>
         <Topbar>Art Gallery</Topbar>
         <ArtList>
+          {bookmark.length === 0 && (
+            <StyledH2>Please select a favorite art piece ...</StyledH2>
+          )}
           {data
             .filter((image) => bookmark.includes(image.slug))
             .map((image) => (
@@ -37,4 +40,8 @@ export default function Favorites({ data, bookmark, onToggleBookmark }) {
 const ArtTitle = styled.h3`
   margin: 0 0 10px;
   font-style: italic;
+`;
+const StyledH2 = styled.h2`
+  text-align: center;
+  padding: 50px 0px;
 `;
