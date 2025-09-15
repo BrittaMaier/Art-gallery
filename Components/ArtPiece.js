@@ -7,6 +7,9 @@ export default function ArtPiece({
   onToggleBookmark,
   bookmark,
 }) {
+  if (!image) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <StyledDiv $isFavorite={bookmark.includes(image.slug)}>
       <LikeButton
@@ -20,7 +23,7 @@ export default function ArtPiece({
           alt={image.name}
           width={image.width}
           height={image.height}
-          $colors={image.colors[0]}
+          colors={image.colors[0]}
         />
         <StyledCardBody>{children}</StyledCardBody>
       </StyledLink>
@@ -50,7 +53,7 @@ const StyledLink = styled.a`
 const StyledImage = styled.img`
   width: 100%;
   max-width: 550px;
-  border: 15px solid ${({ $colors }) => $colors};
+  border: 15px solid ${({ colors }) => colors};
   box-shadow: 0px 4px 5px 0px #00000030;
 `;
 
