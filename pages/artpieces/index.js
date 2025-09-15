@@ -1,4 +1,4 @@
-import ArtPiece from "@/Components/ArtPiece.js";
+import ArtPiece from "@/Components/ArtPiece";
 import Navigation from "@/Components/Navigation";
 import ArtList from "@/Components/ArtList";
 import styled from "styled-components";

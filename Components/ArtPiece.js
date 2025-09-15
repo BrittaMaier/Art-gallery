@@ -1,8 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect } from "react";
-import styled from "styled-components";
-import css from "styled-jsx/css";
+import { styled, css } from "styled-components";
 import LikeButton from "./LikeButton";
 
 export default function ArtPiece({
@@ -37,8 +33,8 @@ const StyledDiv = styled.div`
   //padding: 30px;
   margin: 30px 20px;
   color: #000;
-
   position: relative;
+
   ${({ $isFavorite }) =>
     $isFavorite &&
     css`

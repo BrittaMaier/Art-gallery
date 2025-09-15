@@ -33,7 +33,8 @@ export default function spotlight({ data, bookmark, onToggleBookmark }) {
 }
 
 const SpotlightContainer = styled.div`
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
