@@ -1,6 +1,7 @@
 import ArtPiece from "@/Components/ArtPiece.js";
 import Navigation from "@/Components/Navigation";
-//import ArtList from "@/Components/ArtList";
+import Topbar from "@/Components/Topbar";
+import styled from "styled-components";
 
 export default function spotlight({ data, bookmark, onToggleBookmark }) {
   function getRandomElement(array) {
@@ -14,17 +15,26 @@ export default function spotlight({ data, bookmark, onToggleBookmark }) {
         <title>Spotlight</title>
       </header>
       <main>
-        <h1>Art Gallery</h1>
-        <ArtPiece
-          image={randomArt}
-          bookmark={bookmark}
-          onToggleBookmark={onToggleBookmark}
-        >
-          {randomArt.artist}
-        </ArtPiece>
+        <Topbar>Art Gallery</Topbar>
+        <SpotlightContainer>
+          <ArtPiece
+            image={randomArt}
+            bookmark={bookmark}
+            onToggleBookmark={onToggleBookmark}
+          >
+            {randomArt.artist}
+          </ArtPiece>
+        </SpotlightContainer>
 
         <Navigation />
       </main>
     </>
   );
 }
+
+const SpotlightContainer = styled.div`
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

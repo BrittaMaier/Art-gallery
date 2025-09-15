@@ -1,6 +1,8 @@
-import ArtPiece from "@/Components/ArtPiece.js";
+import ArtPiece from "@/Components/ArtPiece";
 import Navigation from "@/Components/Navigation";
-//import ArtList from "@/Components/ArtList";
+import ArtList from "@/Components/ArtList";
+import styled from "styled-components";
+import Topbar from "@/Components/Topbar";
 
 export default function artpieces({ data, bookmark, onToggleBookmark }) {
   return (
@@ -9,23 +11,28 @@ export default function artpieces({ data, bookmark, onToggleBookmark }) {
         <title>Artpieces</title>
       </header>
       <main>
-        <h1>Art Gallery</h1>
-        <ul>
+        <Topbar>Art Gallery</Topbar>
+        <ArtList>
           {data.map((image) => (
-            <li key={image.slug}>
-              <ArtPiece
-                image={image}
-                bookmark={bookmark}
-                onToggleBookmark={onToggleBookmark}
-              >
-                &quot;{image.name}&quot; by {image.artist}
-              </ArtPiece>
-            </li>
+            <ArtPiece
+              key={image.slug}
+              image={image}
+              bookmark={bookmark}
+              onToggleBookmark={onToggleBookmark}
+            >
+              <ArtTitle>&quot;{image.name}&quot;</ArtTitle>
+              by {image.artist}
+            </ArtPiece>
           ))}
-        </ul>
+        </ArtList>
 
         <Navigation />
       </main>
     </>
   );
 }
+
+const ArtTitle = styled.h3`
+  margin: 0 0 10px;
+  font-style: italic;
+`;

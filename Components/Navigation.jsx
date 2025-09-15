@@ -11,7 +11,8 @@ export default function Navigation() {
 }
 
 const StyledNavigation = styled.nav`
-  background-color: #eae6e6;
+  background-color: #fff;
+  box-shadow: 0px 0px 7px 0px #00000055;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -24,4 +25,7 @@ const StyledLink = styled.a`
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
+  border-right: 1px solid #d1d1d1;
+  font-size: 1.125rem;
+  color: #000;
 `;
