@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import ArtPiece from "./ArtPiece";
 import React from "react";
-import "@testing-library/jest-dom";
 
 const artObject = {
   slug: "orange-red-and-green",
@@ -26,6 +25,18 @@ const artObject = {
     </button>
   ),
 }));*/
+/*test("renders loading when no image", () => {
+  render(
+    <ArtPiece
+      image={null}
+      bookmark={[]}
+      onToggleBookmark={() => {
+        console.log("Hi");
+      }}
+    />
+  );
+  expect(screen.getByText(/loading/i)).toBeInTheDocument();
+});*/
 
 test("renders an artpiece", () => {
   render(
@@ -53,6 +64,10 @@ test("renders an artpiece", () => {
     name: `${artObject.name}`,
   });
   expect(img).toBeInTheDocument();
+  //Testing all attributes to have the right values
+  /* expect(img).toHaveAttribute("src", artObject.imageSource);
+  expect(img).toHaveAttribute("width", artObject.width.toString());
+  expect(img).toHaveAttribute("height", artObject.height.toString());*/
 });
 /*test("applies favorite styling when slug is bookmarked", () => {
   const { container } = render(
